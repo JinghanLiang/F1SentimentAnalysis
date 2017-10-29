@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COMP90019-Formula 1</title>
+<link href="{{ url_for('static', filename='Index.css') }}" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!-- Main Container -->
+<div class="container"> 
+  <!-- Header -->
+  <header class="header"> 
+    <!-- <h4 class="logo">Cluster & Cloud Computing</h4>
+    <h4 class="logo2"><strong>Australian City Analytics</strong></h4> -->
+    <img src="{{ url_for('static', filename='F1Banner.png')}}" alt="" class="intro"> 
+  </header>
+  <!-- Hero Section -->
+  <section class="intro">  
+      
+  </section>
+  <!-- Stats Scenarios Section -->
+  <div class="Scenarios">
+    <div class="thumbnail"> <a href="team"><img src="{{ url_for('static', filename='scenario1.jpg') }}" alt="" width="2000" class="cards"/></a>
+      <h4>Team Ranking</h4>
+      <!-- <p class="tag">HTML, CSS, JS, WordPress</p>
+      <p class="text_column">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+    </div>
+    <div class="thumbnail"> <a href="driver"><img src="{{ url_for('static', filename='scenario2.jpg') }}" alt="" width="2000" class="cards"/></a>
+      <h4>Driver Ranking</h4>
+      <!-- <p class="tag">HTML, CSS, JS, WordPress</p>
+      <p class="text_column">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+    </div>
+    <div class="thumbnail"> <a href="singapore"><img src="{{ url_for('static', filename='singaporeGP.jpg') }}" alt="" width="2000" class="cards"/></a>
+      <h4>SingaporeGP Racing day (Sep. 17)</h4>
+      <!-- <p class="tag">HTML, CSS, JS, WordPress</p>
+      <p class="text_column">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+    </div>
+    <div class="thumbnail"> <a href="malaysia"><img src="{{ url_for('static', filename='MalaysianGP.jpg') }}" alt="" width="2000" class="cards"/></a>
+      <h4>MalaysianGP Racing day (Oct. 01)</h4>
+      <!-- <p class="tag">HTML, CSS, JS, WordPress</p>
+      <p class="text_column">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+    </div> 
+  </div>
+  <div class="Scenarios">
+    <div class="thumbnail"> <a href="japan"><img src="{{ url_for('static', filename='japanMap.jpg') }}" alt="" width="2000" class="cards"/></a>
+      <h4>JapanGP Racing day(Oct.08)</h4>
+      <!-- <p class="tag">HTML, CSS, JS, WordPress</p>
+      <p class="text_column">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> -->
+    </div>
+    <div class="thumbnail"> <a href=".."><img src="{{ url_for('static', filename='BelgiumGP.jpg') }}" alt="" width="2000" class="cards"/></a>
+      <h4>BelgiumGP Racing day(Aug.27)</h4>
+    </div>
+    <div class="thumbnail"> <a href=".."><img src="{{ url_for('static', filename='ItalyGP.jpg') }}" alt="" width="2000" class="cards"/></a>
+      <h4>ItalyGP Racing day(Sep.03)</h4>
+    </div>
+    <div class="thumbnail"> <a href=".."><img src="{{ url_for('static', filename='USGP.jpg') }}" alt="" width="2000" class="cards"/></a>
+      <h4>USA GP Racing day(Oct.22)</h4>
+
+
+    </div>
+  </div>
+  <!-- Footer Section -->
+  <footer id="contact">
+    <p class="hero_header">GET IN TOUCH WITH US</p>
+    <div class="button">EMAIL US </div>
+  </footer>
+  <!-- Copyrights Section -->
+  <div class="copyright">&copy;2017 - <strong>Team 4</strong></div>
+</div>
+<!-- Main Container Ends -->
+</body>
+</html>

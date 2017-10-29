@@ -1,0 +1,39 @@
+{% extends 'Scenarios.html' %}
+
+{% block title %}TeamRanking{% endblock %}
+
+{% block intro %}
+<h5>Event 1</h5>
+<h5>Which Team is leading the race in Formula 1 2017?</h5>
+{% endblock %}
+
+{% block head %}
+    <script type="text/javascript">
+        // Load the Visualization API and the corechart package.
+        google.charts.load('current', {'packages':['corechart']});
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+             $.getJSON("{{ url_for('team_data') }}", function (data) {
+                var data1 = new google.visualization.DataTable(data);
+                //data1.sort({column: 1, desc: true}); 
+                var options = {
+                    height: 800,
+                    // width: 600,
+                    // isStacked: true,
+                    title: 'Team Ranking (Sorted by the sentiment score in descending)'
+                };
+                data1.sort({column:1,desc:true});
+                var chart1 = new google.visualization.BarChart(document.getElementById('chart_div'));
+             chart1.draw(data1, options);
+            });
+         }
+
+    </script>
+{% endblock %}
+
+{% block column %}
+    <div id="chart_div"></div>
+{% endblock %}

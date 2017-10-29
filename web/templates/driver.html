@@ -1,0 +1,36 @@
+{% extends 'Scenarios.html' %}
+
+{% block title %}DriverRanking{% endblock %}
+
+{% block intro %}
+<h5>Driver Ranking</h5>
+<h5>How about dirver ranking in Formula 1 2017?</h5>
+{% endblock %}
+
+{% block head %}
+    <script type="text/javascript">
+        // Load the Visualization API and the corechart package.
+        google.charts.load('current', {'packages':['corechart']});
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            $.getJSON("{{ url_for('driver_data') }}", function (data) {
+                var data1 = new google.visualization.DataTable(data);
+                var options = {
+                    height: 1000,
+                    title: 'Driver Ranking (Sorted by the sentiment score in descending)'
+                };
+                var chart1 = new google.visualization.BarChart(document.getElementById('chart_div1'));
+                data1.sort({column:1,desc:true});
+             chart1.draw(data1, options);
+            });
+
+
+        }
+    </script>
+{% endblock %}
+{% block column %}
+    <div id="chart_div1"></div>
+{% endblock %}

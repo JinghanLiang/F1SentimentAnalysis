@@ -1,0 +1,39 @@
+{% extends 'Scenarios.html' %}
+
+{% block title %}JapanGP{% endblock %}
+
+{% block intro %}
+<h5>Event 5</h5>
+<h5>Observation on Japan Racing day</h5>
+{% endblock %}
+
+{% block head %}
+    <script type="text/javascript">
+        // Load the Visualization API and the corechart package.
+        google.charts.load('current', {'packages':['line']});
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            $.getJSON("{{ url_for('Japan_data') }}", function (data) {
+                var data1 = new google.visualization.DataTable(data);
+                var options = {
+                    chart: {
+                        title: 'Observation of JapanGP on OCT. 08',
+                        subtitle: 'in three teams positive and negative tweets count'
+                    },
+                    height: 1000,
+                };
+
+                var chart1 = new google.charts.Line(document.getElementById('chart_div1'));
+                chart1.draw(data1,google.charts.Line.convertOptions(options));
+            });
+
+
+        }
+    </script>
+{% endblock %}
+{% block column %}
+    <div id="chart_div1"></div>
+{% endblock %}
